@@ -1,0 +1,358 @@
+
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #f5f5f5;
+  background: #0b0b0d;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+button, a { font: inherit; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 6%;
+  border-bottom: 1px solid #262626;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.logo span { color: #a78bfa; }
+nav { display: flex; gap: 30px; color: #aaa; }
+.cart { font-weight: 600; }
+
+.hero {
+  min-height: 480px;
+  padding: 110px 6%;
+  background: radial-gradient(
+    ellipse at 80% 50%, #292044, #101014 65%
+  );
+}
+
+.eyebrow {
+  color: #a78bfa;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-size: clamp(46px, 7vw, 90px);
+  letter-spacing: -4px;
+  line-height: 1.02;
+  margin: 20px 0;
+}
+
+.hero h1 span { color: #a78bfa; }
+.hero > p:not(.eyebrow) { color: #aaa; }
+
+.shopButton {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 17px 28px;
+  background: #a78bfa;
+  color: #090909;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+main { padding: 80px 6%; }
+.sectionHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+.sectionHeading h2 { font-size: 36px; margin: 10px 0; }
+.sectionHeading > p { color: #999; }
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 30px 0;
+}
+
+.filters button {
+  background: #19191d;
+  color: #aaa;
+  border: 1px solid #333;
+  border-radius: 30px;
+  padding: 11px 20px;
+}
+
+.filters button.active {
+  background: #a78bfa;
+  color: #080808;
+  border-color: #a78bfa;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.productImage {
+  background: #202024;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+
+.productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s;
+}
+
+.product:hover img { transform: scale(1.05); }
+.productCategory { color: #999; font-size: 13px; }
+.product h3 { font-size: 17px; }
+
+.productBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productBottom button {
+  background: #a78bfa;
+  border: 0;
+  border-radius: 7px;
+  padding: 10px 18px;
+  font-weight: 700;
+}
+
+.bagSummary {
+  margin: 0 6% 70px;
+  padding: 24px;
+  background: #19191d;
+  border: 1px solid #333;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  padding: 45px 6%;
+  border-top: 1px solid #262626;
+  color: #999;
+}
+footer strong { color: white; }
+
+@media (max-width: 900px) {
+  .productGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .productGrid { grid-template-columns: 1fr; }
+  nav { display: none; }
+  .hero { padding-top: 75px; min-height: 400px; }
+  .hero h1 { letter-spacing: -2px; }
+  .sectionHeading h2 { font-size: 28px; }
+}
+
+
+
+.cart {
+  background: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cart:hover {
+  color: #a78bfa;
+}
+
+.bagSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.bagSummary .checkoutBtn {
+  margin-top: 0;
+}
+
+.backBtn {
+  background: transparent;
+  color: #a78bfa;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 15px;
+}
+
+.successPage {
+  text-align: center;
+  padding: 100px 20px;
+  min-height: 70vh;
+}
+
+.successPage h1 {
+  color: #a78bfa;
+  font-size: 48px;
+}
+
+.successPage p {
+  color: #aaa;
+  margin: 20px 0;
+}
+
+.successPage strong {
+  color: #fff;
+  overflow-wrap: anywhere;
+}
+
+
+/* NeonShop Benefits */
+
+.benefitsSection {
+  width: 100%;
+  padding: 70px 6%;
+  background: #101014;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.benefitCard {
+  padding: 28px 22px;
+  background: #19191f;
+  border: 1px solid #30303a;
+  border-radius: 16px;
+  text-align: left;
+  transition: transform 0.25s, border-color 0.25s;
+}
+
+.benefitCard:hover {
+  transform: translateY(-5px);
+  border-color: #a78bfa;
+}
+
+.benefitIcon {
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.benefitCard h3 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.benefitCard p {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* NeonShop Footer */
+
+.siteFooter {
+  width: 100%;
+  padding: 70px 6% 25px;
+  background: #0b0b0e;
+  border-top: 1px solid #29292f;
+  text-align: left;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 35px;
+}
+
+.footerBrand h2 {
+  color: #fff;
+  font-size: 26px;
+}
+
+.footerBrand h2 span {
+  color: #a78bfa;
+}
+
+.footerBrand p {
+  max-width: 320px;
+  color: #aaa;
+  line-height: 1.7;
+}
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.footerColumn h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footerColumn a,
+.footerColumn span,
+.footerColumn p {
+  color: #999;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0;
+}
+
+.footerColumn a:hover {
+  color: #a78bfa;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #29292f;
+  padding-top: 25px;
+  margin-top: 55px;
+  color: #888;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .benefitsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footerGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 540px) {
+  .benefitsGrid,
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+#home,
+#shop,
+#about,
+#contact {
+  scroll-margin-top: 90px;
+}
